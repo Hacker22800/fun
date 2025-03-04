@@ -4,17 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сюрприз</title>
+    <style>
+        #playButton {
+            padding: 20px 40px;
+            font-size: 20px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #playButton:hover {
+            background-color: #e60000;
+        }
+    </style>
 </head>
 <body>
     <h1>Пранк начался!</h1>
-    <button id="playButton">Нажми, чтобы включить звук</button>
+    <button id="playButton">Нажми!</button>
 
     <script>
         document.getElementById('playButton').addEventListener('click', function() {
-            let audio = new Audio("https://www.myinstants.com/media/sounds/very-loud-airhorn.mp3");
+            let audio = new Audio("https://www.soundjay.com/button/beep-07.wav");
             audio.play().catch(error => {
                 console.error("Ошибка воспроизведения: ", error);
-                alert("Не удалось воспроизвести звук. Попробуйте другой браузер.");
+                alert("Не удалось воспроизвести звук.");
             });
         });
     </script>
