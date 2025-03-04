@@ -7,13 +7,16 @@
 </head>
 <body>
     <h1>Пранк начался!</h1>
-    <button onclick="playSound()">Нажми, чтобы включить звук</button>
+    <button id="playButton">Нажми, чтобы включить звук</button>
 
     <script>
-        function playSound() {
+        document.getElementById('playButton').addEventListener('click', function() {
             let audio = new Audio("https://www.myinstants.com/media/sounds/very-loud-airhorn.mp3");
-            audio.play().catch(error => console.log("Ошибка воспроизведения: ", error));
-        }
+            audio.play().catch(error => {
+                console.error("Ошибка воспроизведения: ", error);
+                alert("Не удалось воспроизвести звук. Попробуйте другой браузер.");
+            });
+        });
     </script>
 </body>
 </html>
