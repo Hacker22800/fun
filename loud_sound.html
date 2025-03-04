@@ -6,12 +6,14 @@
     <title>Сюрприз</title>
 </head>
 <body>
-    <script>
-        window.onload = function() {
-            let audio = new Audio("https://www.myinstants.com/media/sounds/very-loud-airhorn.mp3");
-            audio.play().catch(error => console.log("Автовоспроизведение заблокировано", error));
-        };
-    </script>
     <h1>Пранк начался!</h1>
+    <button onclick="playSound()">Нажми, чтобы включить звук</button>
+
+    <script>
+        function playSound() {
+            let audio = new Audio("https://www.myinstants.com/media/sounds/very-loud-airhorn.mp3");
+            audio.play().catch(error => console.log("Ошибка воспроизведения: ", error));
+        }
+    </script>
 </body>
 </html>
